@@ -8,10 +8,17 @@ class Solution(object):
         :type s: str
         :rtype: bool
         """
-        length=len(s)
-        l_1=[]
-        for i in range (length):
-            if not s[i].isspace():
+        s = s.lower()
+        length = len(s)
+        if length == 0:
+            return True
+
+        l_1 = []
+        l_2 = []
+        for i in range(length):
+            if s[i].isalpha() or s[i].isdigit():
+                # print(s[i])
                 l_1.append(s[i])
+                l_2.append(s[i])
         l_1.reverse()
-        print(l_1)
+        return l_2 == l_1

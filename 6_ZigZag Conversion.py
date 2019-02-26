@@ -30,3 +30,21 @@ class Solution:
         :type numRows: int
         :rtype: str
         """
+        if numRows==1:
+            return s
+
+        fin=["" for i in range (numRows)]
+        index=0
+        increment = 1
+        for char in s:
+            fin[index]+=char
+            if index == numRows-1:
+                increment=-1
+            if index ==0:
+                increment=1
+            index+=increment
+        res="".join(fin)
+        return res
+inputStr="PAYPALISHIRING"
+s=Solution()
+print(s.convert(inputStr,4))
